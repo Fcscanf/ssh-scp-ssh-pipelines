@@ -54,6 +54,7 @@ def connect(callback=None):
         p_key = None
         if INPUT_KEY:
             tmp.write(INPUT_KEY.encode())
+            print(INPUT_KEY.encode())
             tmp.close()
             p_key = paramiko.RSAKey.from_private_key_file(filename=tmp.name)
         ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
